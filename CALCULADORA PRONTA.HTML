@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Uber</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 15px; }
+        .container { max-width: 450px; margin: 0 auto; }
+        input { width: 80%; padding: 15px; margin: 15px 0; }
+        button { width: 80%; padding: 10px; background-color: #28a745; color: white; border: none; }
+        .result { margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora Uber</h1>
+        <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Uber</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 5px; }
+        .container { max-width: 400px; margin: 0 auto; text-align: center; }
+        img.logo { max-width: 100%; height: auto; margin-bottom: 10px; }
+        input { width: 100%; padding: 5px; margin: 5px 0; }
+        button { width: 100%; padding: 5px; background-color: #28a745; color: white; border: none; }
+        .result { margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Insira sua logo aqui -->
+    <img src="sua_logo.png"alt="Logo" width="150">
+
+        <!-- Restante do conteúdo permanece igual -->
+
+        <h3>Ganhos Diários</h3>
+        <input type="number" id="ganhoPorViagem" placeholder="Ganho médio por viagem (R$)">
+        <input type="number" id="numeroViagens" placeholder="Número de viagens por dia">
+        <button onclick="calcularGanhosDiarios()">Calcular Ganhos Diários</button>
+        <p class="result" id="resultadoGanhos"></p>
+
+        <h3>Gastos Diários</h3>
+        <input type="number" id="combustivelPorKm" placeholder="Custo do combustível por km (R$)">
+        <input type="number" id="manutencaoPorKm" placeholder="Custo médio de manutenção por km (R$)">
+        <input type="number" id="kmDiarios" placeholder="Média de km percorridos por dia">
+        <button onclick="calcularGastosDiarios()">Calcular Gastos Diários</button>
+        <p class="result" id="resultadoGastos"></p>
+
+        <h3>Calculadora de Viagem</h3>
+        <input type="number" id="custoPorKm" placeholder="Valor cobrado por km (R$)">
+        <input type="number" id="custoPorMinuto" placeholder="Valor cobrado por minuto (R$)">
+        <input type="number" id="distanciaKm" placeholder="Distância da viagem em km">
+        <input type="number" id="tempoMinutos" placeholder="Tempo da viagem em minutos">
+        <button onclick="calcularViagem()">Calcular Custo da Viagem</button>
+        <p class="result" id="resultadoViagem"></p>
+    </div>
+
+    <script>
+        function calcularGanhosDiarios() {
+            const ganhoPorViagem = parseFloat(document.getElementById("ganhoPorViagem").value);
+            const numeroViagens = parseInt(document.getElementById("numeroViagens").value);
+            const ganhosDiarios = ganhoPorViagem * numeroViagens;
+            document.getElementById("resultadoGanhos").textContent = "Ganhos Diários: R$ " + ganhosDiarios.toFixed(2);
+        }
+
+        function calcularGastosDiarios() {
+            const combustivelPorKm = parseFloat(document.getElementById("combustivelPorKm").value);
+            const manutencaoPorKm = parseFloat(document.getElementById("manutencaoPorKm").value);
+            const kmDiarios = parseFloat(document.getElementById("kmDiarios").value);
+            const gastosDiarios = (combustivelPorKm + manutencaoPorKm) * kmDiarios;
+            document.getElementById("resultadoGastos").textContent = "Gastos Diários: R$ " + gastosDiarios.toFixed(2);
+        }
+
+        function calcularViagem() {
+            const custoPorKm = parseFloat(document.getElementById("custoPorKm").value);
+            const custoPorMinuto = parseFloat(document.getElementById("custoPorMinuto").value);
+            const distanciaKm = parseFloat(document.getElementById("distanciaKm").value);
+            const tempoMinutos = parseFloat(document.getElementById("tempoMinutos").value);
+            const custoTotal = (custoPorKm * distanciaKm) + (custoPorMinuto * tempoMinutos);
+            document.getElementById("resultadoViagem").textContent = "Custo da Viagem: R$ " + custoTotal.toFixed(2);
+        }
+    </script>
+</body>
+</html>
